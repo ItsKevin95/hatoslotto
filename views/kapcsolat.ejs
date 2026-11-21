@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+<div class="container mt-4" style="max-width: 700px">
+  <h1>Kapcsolat</h1>
+  <% if (success) { %><div class="alert alert-success">Üzenetét elmentettük, köszönjük!</div><% } %>
+  <% if (errors.length) { %>
+    <div class="alert alert-danger"><% errors.forEach((e) => { %><div><%= e %></div><% }) %></div>
+  <% } %>
+  <form method="POST" action="/kapcsolat" novalidate>
+    <div class="mb-3">
+      <label class="form-label">Név</label>
+      <input class="form-control" name="name" value="<%= old.name || '' %>">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">E-mail</label>
+      <input class="form-control" name="email" value="<%= old.email || '' %>">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Tárgy</label>
+      <input class="form-control" name="subject" value="<%= old.subject || '' %>">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Üzenet</label>
+      <textarea class="form-control" name="message" rows="5"><%= old.message || '' %></textarea>
+    </div>
+    <button class="btn btn-primary">Küldés</button>
+  </form>
+</div>
+<%- include('partials/footer') %>
