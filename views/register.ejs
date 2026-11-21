@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+<div class="container mt-4" style="max-width: 450px">
+  <h1>Regisztráció</h1>
+  <% if (error) { %><div class="alert alert-danger"><%= error %></div><% } %>
+  <form method="POST" action="/register">
+    <div class="mb-3">
+      <label class="form-label">Név</label>
+      <input class="form-control" name="name" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">E-mail</label>
+      <input class="form-control" name="email" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Jelszó (legalább 6 karakter)</label>
+      <input class="form-control" name="password" type="password" required>
+    </div>
+    <button class="btn btn-primary w-100">Regisztráció</button>
+  </form>
+</div>
+<%- include('partials/footer') %>
