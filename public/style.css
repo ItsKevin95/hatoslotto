@@ -1,0 +1,29 @@
+.hero {
+  background: linear-gradient(135deg, #2b3e5c, #0f0f1a);
+  color: #fff;
+  padding: 5rem 0;
+}
+
+.hero h1 {
+  color: #fff;
+}
+
+.ball {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  font-weight: 700;
+  color: #1a1a1a;
+  background: radial-gradient(circle at 30% 30%, #fff, #ffd54f 35%, #f9a825);
+  margin: 0 .15rem;
+}
+
+.ball-lg {
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.5rem;
+  margin: .3rem;
+}
