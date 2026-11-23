@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+<section class="hero text-center">
+  <div class="container">
+    <div class="mb-4">
+      <span class="ball ball-lg">7</span><span class="ball ball-lg">13</span><span class="ball ball-lg">21</span><span class="ball ball-lg">28</span><span class="ball ball-lg">34</span><span class="ball ball-lg">45</span>
+    </div>
+    <h1 class="display-4">Hatoslottó</h1>
+    <p class="lead">45 számból hatot húznak ki hetente. Nézze meg a húzások és a nyeremények adatait!</p>
+    <a href="/adatbazis" class="btn btn-warning btn-lg mt-3">Húzások böngészése</a>
+  </div>
+</section>
+
+<section class="container my-5">
+  <div class="row align-items-center">
+    <div class="col-lg-6">
+      <h3>A játék szabályai</h3>
+      <p>A játékos 45 számból 6-ot jelöl meg. A sorsoláson 6 számot húznak ki, nyereményt a 3, 4, 5 és 6 találatos
+        szelvények érnek. Külön kategória az 5+1 találat.</p>
+    </div>
+    <div class="col-lg-6">
+      <table class="table">
+        <thead><tr><th>Kategória</th><th>Jelentés</th></tr></thead>
+        <tbody>
+          <tr><td>3 találat</td><td>3 szám egyezik</td></tr>
+          <tr><td>4 találat</td><td>4 szám egyezik</td></tr>
+          <tr><td>5 találat</td><td>5 szám egyezik</td></tr>
+          <tr><td>5+1 találat</td><td>5 szám és a pótszám egyezik</td></tr>
+          <tr><td>6 találat</td><td>telitalálat</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>

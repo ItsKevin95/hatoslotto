@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+<div class="container mt-4" style="max-width: 450px">
+  <h1><%= item.id ? 'Húzás szerkesztése' : 'Új húzás' %></h1>
+  <% if (error) { %><div class="alert alert-danger"><%= error %></div><% } %>
+  <form method="POST" action="<%= action %>">
+    <div class="mb-3">
+      <label class="form-label">Év</label>
+      <input class="form-control" name="ev" type="number" value="<%= item.ev || '' %>" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Hét</label>
+      <input class="form-control" name="het" type="number" value="<%= item.het || '' %>" required>
+    </div>
+    <button class="btn btn-primary">Mentés</button>
+    <a href="/crud" class="btn btn-secondary">Mégse</a>
+  </form>
+</div>
+<%- include('../partials/footer') %>

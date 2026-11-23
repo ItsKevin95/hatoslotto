@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+<div class="container mt-4">
+  <h1>CRUD – Húzások</h1>
+  <a href="/crud/new" class="btn btn-success mb-3">Új húzás</a>
+  <table class="table table-striped">
+    <thead class="table-dark"><tr><th>ID</th><th>Év</th><th>Hét</th><th></th></tr></thead>
+    <tbody>
+      <% huzasok.forEach((h) => { %>
+        <tr>
+          <td><%= h.id %></td>
+          <td><%= h.ev %></td>
+          <td><%= h.het %></td>
+          <td class="text-end">
+            <a class="btn btn-sm btn-warning" href="/crud/<%= h.id %>/edit">Szerkesztés</a>
+            <form class="d-inline" method="POST" action="/crud/<%= h.id %>/delete" onsubmit="return confirm('Biztosan törli?')">
+              <button class="btn btn-sm btn-danger">Törlés</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+<%- include('../partials/footer') %>
