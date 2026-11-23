@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+<% const cella = (n) => n ? n.darab + ' db<br>' + n.ertek.toLocaleString('hu-HU') + ' Ft' : '-'; %>
+<div class="container mt-4">
+  <h1>Adatbázis</h1>
+  <div class="table-responsive">
+    <table class="table table-sm table-striped small">
+      <thead class="table-dark">
+        <tr>
+          <th>Év</th><th>Hét</th><th>Kihúzott számok</th>
+          <th>6 találat</th><th>5+1 találat</th><th>5 találat</th><th>4 találat</th><th>3 találat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% sorok.forEach((s) => { %>
+          <tr>
+            <td><%= s.ev %></td>
+            <td><%= s.het %></td>
+            <td class="text-nowrap"><% s.szamok.forEach((sz) => { %><span class="ball"><%= sz %></span><% }) %></td>
+            <td><%- cella(s.nyer[6]) %></td>
+            <td><%- cella(s.nyer[7]) %></td>
+            <td><%- cella(s.nyer[5]) %></td>
+            <td><%- cella(s.nyer[4]) %></td>
+            <td><%- cella(s.nyer[3]) %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%- include('partials/footer') %>
