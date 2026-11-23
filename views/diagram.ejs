@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+<div class="container mt-4">
+  <h1>Diagram</h1>
+  <p>Melyik számot hányszor húzták ki?</p>
+  <canvas id="diagram"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+  new Chart(document.getElementById('diagram'), {
+    type: 'bar',
+    data: {
+      labels: Array.from({ length: 45 }, (_, i) => i + 1),
+      datasets: [{ label: 'Kihúzások száma', data: <%- JSON.stringify(gyakorisag) %>, backgroundColor: '#f9a825' }],
+    },
+  });
+</script>
+<%- include('partials/footer') %>
