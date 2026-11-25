@@ -1,15 +1,11 @@
 <%- include('partials/header') %>
 <div class="container mt-4" style="max-width: 450px">
   <h1>Regisztráció</h1>
-  <% if (error) { %><div class="alert alert-danger"><%= error %></div><% } %>
+  <% if (message) { %><div class="alert alert-info"><%= message %></div><% } %>
   <form method="POST" action="/register">
     <div class="mb-3">
-      <label class="form-label">Név</label>
-      <input class="form-control" name="name" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">E-mail</label>
-      <input class="form-control" name="email" required>
+      <label class="form-label">Felhasználónév</label>
+      <input class="form-control" name="username" required>
     </div>
     <div class="mb-3">
       <label class="form-label">Jelszó (legalább 6 karakter)</label>

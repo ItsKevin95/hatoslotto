@@ -2,7 +2,8 @@
 
 Készítették: Kovács Kevin (LXK94M) és Szabó Ákos (RZXUK4)
 
-Node.js, Express, EJS, MongoDB Atlas (Mongoose), Passport, Chart.js, Render.com.
+Node.js, Express, EJS, MongoDB Atlas (Mongoose), express-session + connect-mongo, bcrypt, Chart.js, Render.com.
+Az autentikáció a gyakorlati anyag „07b-Autentikáció” megoldására épül.
 Téma: Bootswatch Lux (https://bootswatch.com/lux/).
 
 ## Menük
@@ -23,7 +24,7 @@ npm start
 ```
 
 A `.env` fájlba kell a `MONGODB_URI` és a `SESSION_SECRET` (minta: `.env.example`).
-A `npm run seed` betölti a `data` mappa adatait és létrehozza az admin felhasználót (`admin@hatoslotto.hu` / `admin123`).
+A `npm run seed` betölti a `data` mappa adatait és létrehozza az admin felhasználót (`admin` / `admin123`).
 
 ## Render.com
 

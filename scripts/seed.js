@@ -1,7 +1,7 @@
 require('dotenv').config({ quiet: true });
 const fs = require('fs');
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const Huzas = require('../models/Huzas');
 const Huzott = require('../models/Huzott');
 const Nyeremeny = require('../models/Nyeremeny');
@@ -28,11 +28,10 @@ async function main() {
     console.log(`${fajl}: ${adatok.length} rekord betöltve`);
   }
 
-  const email = (process.env.ADMIN_EMAIL || 'admin@hatoslotto.hu').toLowerCase();
-  const password = process.env.ADMIN_PASSWORD || 'admin123';
-  await User.deleteOne({ email });
-  await User.create({ name: 'Admin', email, password: await bcrypt.hash(password, 10), role: 'admin' });
-  console.log(`Admin: ${email} / ${password}`);
+  await User.deleteMany({});
+  await User.syncIndexes();
+  await User.create({ username: 'admin', password: await bcrypt.hash('admin123', 10), role: 'admin' });
+  console.log('Admin: admin / admin123');
 
   await mongoose.disconnect();
 }
